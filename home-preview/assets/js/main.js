@@ -76,7 +76,7 @@
     setHeader();
     if (!reduceMotion && heroStage && window.innerWidth > 768) {
       const y = Math.min(window.scrollY, 420);
-      heroStage.style.transform = "translateY(" + Math.round(y * 0.05) + "px) scale(1.04)";
+      heroStage.style.transform = "translateY(" + Math.round(y * 0.04) + "px) scale(1.02)";
     } else if (heroStage) {
       heroStage.style.transform = "";
     }
