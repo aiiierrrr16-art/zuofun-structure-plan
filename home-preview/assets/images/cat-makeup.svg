@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img">
   <rect width="800" height="1000" fill="#111"/>
   <text x="36" y="48" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2">PLACEHOLDER · MAKEUP</text>
-  <rect x="170" y="280" width="130" height="380" rx="16" fill="#C91524"/>
+  <rect x="170" y="280" width="130" height="380" rx="16" fill="#90191D"/>
   <rect x="170" y="280" width="130" height="64" fill="#F7F5F2"/>
   <rect x="350" y="220" width="80" height="480" rx="40" fill="#F7F5F2"/>
   <rect x="490" y="340" width="140" height="140" rx="70" fill="#d9c8c0"/>

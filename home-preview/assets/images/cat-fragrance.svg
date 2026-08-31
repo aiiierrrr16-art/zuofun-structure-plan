@@ -3,5 +3,5 @@
   <text x="36" y="48" fill="#727272" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2">PLACEHOLDER · FRAGRANCE</text>
   <rect x="356" y="220" width="88" height="64" rx="6" fill="#F7F5F2"/>
   <path d="M292 300h216c18 0 32 14 32 32v420c0 42-34 76-76 76H336c-42 0-76-34-76-76V332c0-18 14-32 32-32z" fill="#F7F5F2"/>
-  <rect x="352" y="430" width="96" height="8" fill="#C91524"/>
+  <rect x="352" y="430" width="96" height="8" fill="#90191D"/>
 </svg>

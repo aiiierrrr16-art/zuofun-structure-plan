@@ -1,11 +1,9 @@
 /* Visual Design System V1 — Beauty-first with manufacturing credibility.
    Tokens are the source of truth. Do not invent per-section styles. */
 :root {
-  --brand-red: #90181d;
-  --brand-red-dark: #6f1217;
-  --brand-red-soft: #f3e6e7;
-  --red: var(--brand-red);
-  --red-deep: var(--brand-red-dark);
+  --brand-red: #90191D;
+  --brand-red-dark: #761418;
+  --brand-red-soft: #F4E8E9;
   --white: #ffffff;
   --warm: #f7f5f2;
   --black: #111111;
@@ -112,8 +110,19 @@ h1, h2, h3, .serif {
 }
 .btn .arrow { transition: transform .28s var(--ease); }
 .btn:hover .arrow { transform: translateX(4px); }
-.btn-primary { background: var(--brand-red); color: var(--white); }
-.btn-primary:hover { background: var(--brand-red-dark); }
+.btn-primary,
+.header-cta,
+.to-top {
+  background-color: var(--brand-red);
+  color: var(--white);
+}
+.btn-primary:hover,
+.header-cta:hover,
+.to-top:hover {
+  background-color: var(--brand-red-dark);
+  color: var(--white);
+}
+.btn-primary { color: var(--white); }
 .btn-ghost {
   background: transparent;
   border-color: var(--black);
@@ -190,8 +199,7 @@ h1, h2, h3, .serif {
   clip: rect(0 0 0 0);
 }
 .nav-item { position: relative; }
-.nav-link,
-.header-cta {
+.nav-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -206,14 +214,22 @@ h1, h2, h3, .serif {
   cursor: pointer;
 }
 .header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 16px;
   min-height: 54px;
   padding: 0 26px;
+  border: 0;
   border-radius: var(--radius-btn);
-  background: var(--brand-red);
-  color: var(--white) !important;
+  background-color: var(--brand-red);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  cursor: pointer;
 }
-.header-cta:hover { background: var(--brand-red-dark); }
 .dropdown {
   position: absolute;
   top: calc(100% + 6px);

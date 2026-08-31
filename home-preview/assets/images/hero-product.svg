@@ -28,13 +28,13 @@
   <rect x="190" y="270" width="88" height="260" fill="url(#glass)" stroke="#8a827a"/>
   <rect x="300" y="310" width="72" height="220" fill="url(#glass)" stroke="#8a827a"/>
   <rect x="396" y="250" width="96" height="280" fill="url(#glass)" stroke="#8a827a"/>
-  <rect x="214" y="390" width="40" height="110" fill="#c91524" opacity=".55"/>
-  <rect x="418" y="360" width="52" height="140" fill="#a80f1c" opacity=".45"/>
+  <rect x="214" y="390" width="40" height="110" fill="#90191D" opacity=".55"/>
+  <rect x="418" y="360" width="52" height="140" fill="#761418" opacity=".45"/>
   <rect x="620" y="200" width="420" height="520" fill="#e8e2db"/>
   <rect x="660" y="250" width="340" height="14" fill="#111"/>
   <rect x="700" y="300" width="36" height="280" fill="#292929"/>
   <rect x="780" y="300" width="36" height="280" fill="#292929"/>
-  <rect x="860" y="300" width="36" height="280" fill="#c91524"/>
+  <rect x="860" y="300" width="36" height="280" fill="#90191D"/>
   <rect x="940" y="300" width="36" height="280" fill="#292929"/>
   <rect x="680" y="590" width="300" height="18" fill="#6e6a66"/>
   <rect x="160" y="780" width="1280" height="28" fill="url(#steel)"/>

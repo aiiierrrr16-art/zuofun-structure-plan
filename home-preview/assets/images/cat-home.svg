@@ -2,6 +2,6 @@
   <rect width="800" height="1000" fill="#292929"/>
   <text x="36" y="48" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2">PLACEHOLDER · HOME FRAGRANCE</text>
   <circle cx="400" cy="430" r="210" fill="#1a1a1a"/>
-  <circle cx="400" cy="430" r="64" fill="#C91524"/>
+  <circle cx="400" cy="430" r="64" fill="#90191D"/>
   <rect x="250" y="680" width="300" height="120" rx="12" fill="#F7F5F2"/>
 </svg>
