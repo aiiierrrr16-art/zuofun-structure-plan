@@ -11,7 +11,6 @@
   const toast = document.querySelector(".toast");
   const inquiry = document.querySelector(".inquiry");
   const form = document.querySelector(".inquiry-form");
-  const heroPhoto = document.querySelector(".hero-photo");
   const processItems = [...document.querySelectorAll(".process-item")];
   const whyItems = [...document.querySelectorAll(".why-item")];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -74,12 +73,6 @@
 
   window.addEventListener("scroll", function () {
     setHeader();
-    if (!reduceMotion && heroPhoto && window.innerWidth > 768) {
-      const y = Math.min(window.scrollY, 420);
-      heroPhoto.style.transform = "translateY(" + Math.round(y * 0.04) + "px)";
-    } else if (heroPhoto) {
-      heroPhoto.style.transform = "";
-    }
   }, { passive: true });
   setHeader();
 
