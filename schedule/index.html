@@ -117,6 +117,89 @@
       .footer-inner{display:block}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+    /* Match the visual language of the main structure-plan page */
+    :root{
+      --red:#df2638;
+      --red-dark:#b91228;
+      --red-soft:#fff0f2;
+      --ink:#201719;
+      --muted:#77676a;
+      --line:#efdadd;
+      --paper:#fffafa;
+      --shadow:0 20px 55px rgba(115,13,28,.10);
+    }
+    body{background:var(--paper)}
+    .wrap{width:min(1260px,calc(100% - 56px))}
+    .nav{position:fixed;z-index:40;top:16px;left:50%;width:max-content;max-width:calc(100vw - 24px);transform:translateX(-50%);border:1px solid rgba(225,183,189,.7);border-radius:999px;background:rgba(255,255,255,.84);box-shadow:0 10px 35px rgba(112,22,34,.10);backdrop-filter:blur(18px)}
+    .nav-inner{width:auto;height:auto;padding:6px 8px;gap:2px}
+    .brand{padding:5px 10px;color:#bd142b;font-size:14px;letter-spacing:.05em}
+    .nav-links{gap:2px}
+    .nav-links a{padding:7px 10px;border-radius:8px;color:#77676a;white-space:nowrap;font-size:12px}
+    .nav-links a:hover{background:#fff0f2;color:#bd142b}
+    .preview-link{background:#bd142b!important;color:#fff!important;border-radius:999px!important}
+    .hero{position:relative;min-height:920px;padding:135px 24px 86px;display:flex;align-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at 50% 20%,#fff 0,#fff8f8 38%,#fff0f2 72%,#ffe7ea 100%)}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero:before{width:520px;height:520px;right:-270px;top:100px;background:radial-gradient(circle,#f7b7be 0,rgba(247,183,190,0) 68%)}
+    .hero:after{width:420px;height:420px;left:-220px;bottom:40px;background:radial-gradient(circle,#ffd2d7 0,rgba(255,210,215,0) 68%)}
+    .hero-grid{position:relative;z-index:2;display:block;width:min(980px,100%);margin:auto}
+    .eyebrow{justify-content:center;color:#be172c}
+    h1{max-width:980px;margin:18px auto;font-size:clamp(48px,6.2vw,88px);letter-spacing:-.045em}
+    h1 .accent{color:#df2638;font-style:italic}
+    .hero-copy{max-width:750px;margin:0 auto;color:#766568;font-size:18px}
+    .status-card{width:min(820px,100%);margin:44px auto 0;padding:0;overflow:hidden;border:1px solid #f0cdd1;border-radius:22px;background:rgba(255,255,255,.92);color:var(--ink);box-shadow:0 30px 80px rgba(127,14,30,.13);text-align:left;animation:floaty 7s ease-in-out infinite}
+    .status-card:after{display:none}
+    .status-label{padding:13px 18px;border-bottom:1px solid #f1d9dc;background:#fff;color:#be172c;font-weight:800}
+    .status-row{margin:0;padding:26px 28px 14px;align-items:center}
+    .status-row strong{color:#bd142b;font-size:58px}
+    .status-row span{color:#77676a;font-size:14px}
+    .bar{margin:0 28px;background:#f5dadd}
+    .bar i{background:linear-gradient(90deg,#bd142b,#df2638)}
+    .status-note{margin:0;padding:17px 28px 25px;color:#77676a}
+    .section{max-width:1260px;margin:0 auto;padding:86px 0;border-bottom:1px solid var(--line)}
+    .section-head{grid-template-columns:minmax(0,1fr) minmax(280px,520px);gap:35px;margin-bottom:40px}
+    .kicker{color:#df2638}
+    h2{font-size:clamp(34px,4vw,55px);letter-spacing:-.035em}
+    .summary{background:#fff;border-radius:16px;box-shadow:0 5px 20px rgba(115,13,28,.03);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .summary:hover{transform:translateY(-5px);border-color:#e9adb5;box-shadow:var(--shadow)}
+    .summary .num{color:#df2638}
+    .timeline:before{background:#efdadd}
+    .phase-card{border-radius:18px;background:#fff;box-shadow:0 5px 20px rgba(115,13,28,.03);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .phase-card:hover{transform:translateY(-4px);border-color:#e9adb5;box-shadow:var(--shadow)}
+    .phase.current .phase-card{border-color:#e9adb5;box-shadow:0 20px 55px rgba(115,13,28,.10)}
+    .phase.current .phase-card:before{background:#df2638}
+    .deliverable{background:#fff0f2}
+    .deliverable b{color:#b91228}
+    .milestone{background:#bd142b;box-shadow:0 20px 55px rgba(115,13,28,.12);transition:transform .22s ease}
+    .milestone:hover{transform:translateY(-5px)}
+    .milestone:nth-child(2){background:#df2638}
+    .milestone:nth-child(3){background:#fff;color:var(--ink)}
+    .scope article{border-radius:16px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .scope article:hover{transform:translateY(-5px);border-color:#e9adb5;box-shadow:var(--shadow)}
+    .footer{max-width:1260px;margin:auto}
+    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-.35deg)}50%{transform:translateY(-8px) rotate(.2deg)}}
+    @media(max-width:900px){
+      .section{padding-left:28px;padding-right:28px}
+      .section-head{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .wrap{width:min(100% - 40px,1180px)}
+      .nav{top:10px;left:12px;right:12px;width:auto;transform:none}
+      .nav-inner{justify-content:center}
+      .brand{display:none}
+      .nav-links>a:not(.preview-link){display:block;padding:7px 8px}
+      .hero{min-height:820px;padding:110px 20px 60px}
+      h1{font-size:46px}
+      .hero-copy{font-size:16px}
+      .status-card{margin-top:34px}
+      .status-row{padding:22px 20px 12px}
+      .status-row strong{font-size:48px}
+      .bar{margin:0 20px}
+      .status-note{padding:15px 20px 22px}
+      .section{padding:65px 20px}
+      .timeline:before{left:27px}
+      .phase{padding-left:28px}
+    }
   </style>
 </head>
 <body>
@@ -137,7 +220,7 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Website Redesign · Project Plan</div>
-          <h1>卓芬海外官网<br>改版进度与排期</h1>
+          <h1>卓芬海外官网<br><span class="accent">改版进度</span>与排期</h1>
           <p class="hero-copy">先完成可交互的首页视觉预览，确认结构与设计方向，再进入 WordPress 重建。设计决策与正式实施分开，降低返工及线上风险。</p>
         </div>
         <aside class="status-card" aria-label="当前项目状态">
