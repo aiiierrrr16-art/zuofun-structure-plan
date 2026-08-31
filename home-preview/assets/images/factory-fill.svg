@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" fill="#111"/>
+  <text x="40" y="48" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3">PLACEHOLDER · FILLING / PACKING</text>
+  <rect x="180" y="140" width="70" height="500" fill="#292929"/>
+  <rect x="320" y="140" width="70" height="500" fill="#292929"/>
+  <rect x="460" y="140" width="70" height="500" fill="#C91524"/>
+  <rect x="600" y="140" width="70" height="500" fill="#292929"/>
+  <rect x="740" y="140" width="70" height="500" fill="#292929"/>
+  <rect x="160" y="640" width="880" height="28" fill="#1a1a1a"/>
+</svg>

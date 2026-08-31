@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" fill="#F7F5F2"/>
+  <text x="40" y="48" fill="#727272" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3">PLACEHOLDER · LABORATORY</text>
+  <rect x="120" y="160" width="960" height="520" fill="#fff"/>
+  <rect x="200" y="240" width="80" height="360" fill="#C91524"/>
+  <rect x="320" y="300" width="80" height="300" fill="#E5E3DF"/>
+  <rect x="720" y="220" width="280" height="280" fill="#111"/>
+</svg>

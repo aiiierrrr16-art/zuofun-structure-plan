@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" fill="#F7F5F2"/>
+  <text x="40" y="48" fill="#727272" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3">PLACEHOLDER · QUALITY CONTROL</text>
+  <circle cx="600" cy="400" r="170" fill="#fff" stroke="#111" stroke-width="6"/>
+  <path d="M530 400l48 48 104-116" fill="none" stroke="#C91524" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

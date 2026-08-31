@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img">
+  <rect width="1400" height="900" fill="#111"/>
+  <text x="40" y="48" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3">PLACEHOLDER · PRODUCTION LINE — not a live factory photo</text>
+  <rect x="80" y="160" width="1240" height="560" fill="#292929"/>
+  <rect x="140" y="240" width="240" height="400" fill="#1a1a1a"/>
+  <rect x="420" y="240" width="240" height="400" fill="#1a1a1a"/>
+  <rect x="700" y="240" width="240" height="400" fill="#1a1a1a"/>
+  <rect x="1000" y="280" width="180" height="320" fill="#C91524"/>
+</svg>
