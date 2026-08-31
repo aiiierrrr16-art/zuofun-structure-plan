@@ -78,6 +78,9 @@
     .deliverable{padding:16px 18px;border-radius:15px;background:#f8f4f2}
     .deliverable b{display:block;margin-bottom:7px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--red)}
     .deliverable span{display:block;font-size:13px}
+    .doc-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+    .doc-links a{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border:1px solid #edcbd0;border-radius:9px;background:#fff;color:var(--red-dark);font-size:11px;font-weight:750;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+    .doc-links a:hover{transform:translateY(-2px);border-color:var(--red)}
     .milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .milestone{padding:28px;border-radius:22px;background:var(--ink);color:#fff}
     .milestone:nth-child(2){background:var(--red)}
@@ -261,7 +264,7 @@
             <div class="phase-date">已完成</div>
             <article class="phase-card">
               <div><div class="phase-title"><h3>基础盘点与结构方案</h3><span class="badge done">Done</span></div><p class="phase-copy">完成正式改版前的结构基线与安全准备。</p><b class="work-label">主要工作</b><ul class="work-list"><li>盘点 Pages、Posts、Products、Product Categories 与菜单关系</li><li>梳理页眉、首页、页脚信息架构和现有 URL</li><li>建立 Home Redesign 草稿，并保存原首页 Elementor 模板</li></ul></div>
-              <div class="deliverable"><b>阶段交付</b><span>现站档案 · 页面分类表 · 结构方案 · WordPress安全草稿</span></div>
+              <div class="deliverable"><b>阶段交付</b><span>现站档案 · 页面分类表 · 结构方案 · WordPress安全草稿</span><div class="doc-links"><a href="../" target="_blank" rel="noopener">结构方案网页 ↗</a><a href="../documents/pages-list.pdf" target="_blank" rel="noopener">Pages列表 PDF ↗</a><a href="../documents/main-menu.pdf" target="_blank" rel="noopener">主菜单 PDF ↗</a><a href="../documents/product-categories.pdf" target="_blank" rel="noopener">产品分类 PDF ↗</a><a href="../documents/v6-optimization-plan.pdf" target="_blank" rel="noopener">V6优化方案 PDF ↗</a></div></div>
             </article>
           </div>
           <div class="phase current reveal">
