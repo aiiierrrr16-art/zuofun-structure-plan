@@ -27,6 +27,11 @@
     document.body.classList.remove("nav-locked");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
+    document.querySelectorAll(".nav-item.is-open").forEach(function (item) {
+      item.classList.remove("is-open");
+      const btn = item.querySelector(".nav-subtoggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
   }
 
   function openMenu() {
@@ -44,6 +49,23 @@
   document.querySelectorAll(".nav a").forEach(function (link) {
     link.addEventListener("click", function () {
       if (!desktopNav.matches) closeMenu();
+    });
+  });
+  document.querySelectorAll(".nav-subtoggle").forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = btn.closest(".nav-item");
+      const open = item.classList.contains("is-open");
+      document.querySelectorAll(".nav-item.is-open").forEach(function (other) {
+        other.classList.remove("is-open");
+        const otherBtn = other.querySelector(".nav-subtoggle");
+        if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+      });
+      if (!open) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
     });
   });
   window.addEventListener("resize", function () {

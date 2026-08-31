@@ -1,63 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1600" preserveAspectRatio="xMidYMid slice" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1800" preserveAspectRatio="xMidYMid slice" role="img">
   <defs>
-    <linearGradient id="studio" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2c1c1a"/>
-      <stop offset="48%" stop-color="#1a1110"/>
-      <stop offset="100%" stop-color="#0e0909"/>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8d0c8"/>
+      <stop offset="38%" stop-color="#cfc6bc"/>
+      <stop offset="100%" stop-color="#8f8680"/>
     </linearGradient>
-    <radialGradient id="key" cx="32%" cy="22%" r="62%">
-      <stop offset="0%" stop-color="#f3e4d8" stop-opacity=".42"/>
-      <stop offset="42%" stop-color="#c48a7a" stop-opacity=".12"/>
-      <stop offset="100%" stop-color="#1a1110" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="floor" cx="50%" cy="100%" r="48%">
-      <stop offset="0%" stop-color="#3a2420" stop-opacity=".9"/>
-      <stop offset="100%" stop-color="#0e0909" stop-opacity="0"/>
-    </radialGradient>
     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#4a1a20"/>
-      <stop offset="22%" stop-color="#8a2a34"/>
-      <stop offset="48%" stop-color="#c91524"/>
-      <stop offset="62%" stop-color="#e8c8c4"/>
-      <stop offset="100%" stop-color="#3a1418"/>
+      <stop offset="0%" stop-color="#ece7e2"/>
+      <stop offset="40%" stop-color="#f7f5f2"/>
+      <stop offset="100%" stop-color="#c9c2ba"/>
     </linearGradient>
-    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f0d2ce"/>
-      <stop offset="18%" stop-color="#c91524"/>
-      <stop offset="100%" stop-color="#4a0e14"/>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d7c4be"/>
+      <stop offset="55%" stop-color="#8a3a42"/>
+      <stop offset="100%" stop-color="#5a1c24"/>
     </linearGradient>
-    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3a3a3a"/>
-      <stop offset="45%" stop-color="#111"/>
-      <stop offset="100%" stop-color="#000"/>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8b4ae"/>
+      <stop offset="100%" stop-color="#6e6a66"/>
     </linearGradient>
-    <filter id="soft">
-      <feGaussianBlur stdDeviation="18"/>
-    </filter>
-    <filter id="softer">
-      <feGaussianBlur stdDeviation="28"/>
-    </filter>
   </defs>
-  <rect width="1400" height="1600" fill="url(#studio)"/>
-  <rect width="1400" height="1600" fill="url(#key)"/>
-  <ellipse cx="980" cy="1380" rx="420" ry="90" fill="url(#floor)"/>
-  <ellipse cx="420" cy="420" rx="220" ry="220" fill="#c9a090" opacity=".08" filter="url(#softer)"/>
-  <ellipse cx="1180" cy="260" rx="160" ry="160" fill="#f4e8e0" opacity=".1" filter="url(#soft)"/>
-  <g opacity=".28" transform="translate(980,430) scale(.72)">
-    <rect x="40" y="0" width="70" height="54" rx="6" fill="#d9c8be"/>
-    <rect x="18" y="54" width="114" height="18" fill="#b9a49a"/>
-    <path d="M0 82h150c12 0 22 10 22 22v310c0 28-22 50-50 50H28c-28 0-50-22-50-50V104c0-12 10-22 22-22z" fill="#2a1c1a"/>
+  <rect width="1600" height="1800" fill="url(#room)"/>
+  <rect x="0" y="0" width="1600" height="86" fill="#b7aea6"/>
+  <rect x="90" y="0" width="18" height="1800" fill="#c4bbb3"/>
+  <rect x="1480" y="0" width="18" height="1800" fill="#c4bbb3"/>
+  <rect x="160" y="220" width="760" height="22" fill="#9a928a"/>
+  <rect x="190" y="270" width="88" height="260" fill="url(#glass)" stroke="#8a827a"/>
+  <rect x="300" y="310" width="72" height="220" fill="url(#glass)" stroke="#8a827a"/>
+  <rect x="396" y="250" width="96" height="280" fill="url(#glass)" stroke="#8a827a"/>
+  <rect x="214" y="390" width="40" height="110" fill="#c91524" opacity=".55"/>
+  <rect x="418" y="360" width="52" height="140" fill="#a80f1c" opacity=".45"/>
+  <rect x="620" y="200" width="420" height="520" fill="#e8e2db"/>
+  <rect x="660" y="250" width="340" height="14" fill="#111"/>
+  <rect x="700" y="300" width="36" height="280" fill="#292929"/>
+  <rect x="780" y="300" width="36" height="280" fill="#292929"/>
+  <rect x="860" y="300" width="36" height="280" fill="#c91524"/>
+  <rect x="940" y="300" width="36" height="280" fill="#292929"/>
+  <rect x="680" y="590" width="300" height="18" fill="#6e6a66"/>
+  <rect x="160" y="780" width="1280" height="28" fill="url(#steel)"/>
+  <rect x="200" y="830" width="1180" height="220" fill="#9a938c"/>
+  <rect x="240" y="860" width="160" height="160" fill="#d8d2cb"/>
+  <rect x="430" y="860" width="160" height="160" fill="#d8d2cb"/>
+  <rect x="620" y="860" width="160" height="160" fill="#d8d2cb"/>
+  <rect x="810" y="860" width="160" height="160" fill="#cfc8c0"/>
+  <rect x="280" y="900" width="80" height="90" fill="#f7f5f2"/>
+  <rect x="470" y="900" width="80" height="90" fill="#f7f5f2"/>
+  <rect x="660" y="900" width="80" height="90" fill="#f7f5f2"/>
+  <rect x="120" y="1180" width="1360" height="620" fill="#7d7670"/>
+  <ellipse cx="1180" cy="1640" rx="260" ry="36" fill="#111" opacity=".22"/>
+  <g transform="translate(980,1188)">
+    <rect x="78" y="0" width="70" height="54" fill="#111"/>
+    <rect x="58" y="54" width="110" height="16" fill="#292929"/>
+    <path d="M36 80h154c14 0 26 12 26 26v310c0 30-24 54-54 54H64c-30 0-54-24-54-54V106c0-14 12-26 26-26z" fill="#f4efe9" stroke="#cfc6bc"/>
+    <rect x="64" y="210" width="100" height="210" fill="url(#fill)"/>
   </g>
-  <ellipse cx="700" cy="1320" rx="210" ry="28" fill="#000" opacity=".35"/>
-  <g transform="translate(548,268)">
-    <rect x="92" y="0" width="112" height="92" rx="8" fill="url(#cap)"/>
-    <rect x="108" y="10" width="80" height="8" fill="#c9b7a8" opacity=".45"/>
-    <rect x="70" y="88" width="156" height="22" fill="#1a1a1a"/>
-    <rect x="78" y="96" width="140" height="6" fill="#c9b7a8" opacity=".55"/>
-    <path d="M36 118h224c22 0 40 18 40 40v620c0 48-38 86-86 86H82c-48 0-86-38-86-86V158c0-22 18-40 40-40z" fill="url(#glass)"/>
-    <path d="M52 310h192c8 0 14 6 14 14v454c0 40-32 72-72 72H110c-40 0-72-32-72-72V324c0-8 6-14 14-14z" fill="url(#liquid)"/>
-    <path d="M86 330h18c8 0 14 8 12 16l-28 420c-1 10-10 18-20 18h-6c-8 0-13-8-11-16l32-422c2-8 9-16 17-16z" fill="#fff" opacity=".18"/>
-    <rect x="108" y="430" width="90" height="6" fill="#111" opacity=".35"/>
+  <g transform="translate(1228,1288) scale(.78)">
+    <rect x="78" y="0" width="70" height="54" fill="#292929"/>
+    <rect x="58" y="54" width="110" height="16" fill="#111"/>
+    <path d="M36 80h154c14 0 26 12 26 26v310c0 30-24 54-54 54H64c-30 0-54-24-54-54V106c0-14 12-26 26-26z" fill="#efe8e2" stroke="#cfc6bc"/>
+    <rect x="64" y="230" width="100" height="190" fill="#d7c4be"/>
   </g>
-  <rect x="0" y="0" width="1400" height="1600" fill="url(#key)" opacity=".35"/>
+  <rect x="0" y="0" width="1600" height="1800" fill="#1a1210" opacity=".08"/>
 </svg>

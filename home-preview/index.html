@@ -39,49 +39,65 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="#hero">ZUOFUN</a>
+      <a class="logo" href="#hero">
+        <img class="logo-img" src="assets/images/logo-zuofun.svg" width="148" height="36" alt="ZUOFUN" />
+      </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
       <div class="nav-backdrop"></div>
       <nav class="nav" id="site-nav" aria-label="Primary">
-        <button class="menu-close btn btn-line" type="button">Close</button>
-        <div class="nav-item">
-          <a class="nav-link" href="#products">Products</a>
-          <div class="dropdown">
-            <a href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">Fragrance</a>
-            <a href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">Home Fragrance</a>
-            <a href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">Skincare &amp; Body Care</a>
-            <a href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">Makeup</a>
-            <a href="https://www.zuofun.com/product/" target="_blank" rel="noopener">All Products</a>
+        <div class="nav-panel">
+          <button class="menu-close btn btn-line" type="button">Close</button>
+          <div class="nav-item">
+            <div class="nav-row">
+              <a class="nav-link" href="#products">Products</a>
+              <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-products" aria-label="Open Products submenu"></button>
+            </div>
+            <div class="dropdown" id="sub-products">
+              <a href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">Fragrance</a>
+              <a href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">Home Fragrance</a>
+              <a href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">Skincare &amp; Body Care</a>
+              <a href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">Makeup</a>
+              <a href="https://www.zuofun.com/product/" target="_blank" rel="noopener">All Products</a>
+            </div>
           </div>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="#offer">Work With Us</a>
-          <div class="dropdown">
-            <a href="#offer">Private Label</a>
-            <a href="#pending-low-moq" data-pending="Low MOQ page URL is pending confirmation.">Low MOQ Customized</a>
-            <a href="#pending-one-stop" data-pending="One-stop OEM/ODM URL needs verification.">One-stop OEM/ODM</a>
-            <a href="#pending-wholesale" data-pending="Wholesale URL is pending confirmation.">Wholesale Ready-to-Sell</a>
+          <div class="nav-item">
+            <div class="nav-row">
+              <a class="nav-link" href="#offer">Work With Us</a>
+              <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-offer" aria-label="Open Work With Us submenu"></button>
+            </div>
+            <div class="dropdown" id="sub-offer">
+              <a href="#offer">Private Label</a>
+              <a href="#pending-low-moq" data-pending="Low MOQ page URL is pending confirmation.">Low MOQ Customized</a>
+              <a href="#pending-one-stop" data-pending="One-stop OEM/ODM URL needs verification.">One-stop OEM/ODM</a>
+              <a href="#pending-wholesale" data-pending="Wholesale URL is pending confirmation.">Wholesale Ready-to-Sell</a>
+            </div>
           </div>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="#process">Expertise</a>
-          <div class="dropdown">
-            <a href="#process">Formula Development</a>
-            <a href="#pending-packaging" data-pending="Packaging Development page is not confirmed yet.">Packaging Design</a>
-            <a href="#factory">Manufacturing</a>
-            <a href="#certifications">Quality &amp; Compliance</a>
+          <div class="nav-item">
+            <div class="nav-row">
+              <a class="nav-link" href="#process">Expertise</a>
+              <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-expertise" aria-label="Open Expertise submenu"></button>
+            </div>
+            <div class="dropdown" id="sub-expertise">
+              <a href="#process">Formula Development</a>
+              <a href="#pending-packaging" data-pending="Packaging Development page is not confirmed yet.">Packaging Design</a>
+              <a href="#factory">Manufacturing</a>
+              <a href="#certifications">Quality &amp; Compliance</a>
+            </div>
           </div>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-          <div class="dropdown">
-            <a href="https://www.zuofun.com/about/" target="_blank" rel="noopener">Who We Are</a>
-            <a href="#factory">Factory &amp; R&amp;D</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#markets">Global Markets</a>
+          <div class="nav-item">
+            <div class="nav-row">
+              <a class="nav-link" href="#about">About</a>
+              <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="Open About submenu"></button>
+            </div>
+            <div class="dropdown" id="sub-about">
+              <a href="https://www.zuofun.com/about/" target="_blank" rel="noopener">Who We Are</a>
+              <a href="#factory">Factory &amp; R&amp;D</a>
+              <a href="#certifications">Certifications</a>
+              <a href="#markets">Global Markets</a>
+            </div>
           </div>
+          <a class="nav-link" href="#news">News</a>
         </div>
-        <a class="nav-link" href="#news">News</a>
         <a class="header-cta" href="#inquiry">Start Your Project</a>
       </nav>
     </div>
@@ -92,16 +108,16 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Beauty Manufacturing · OEM / ODM</p>
-          <h1 id="hero-title">Beauty Manufacturing,<br />From Concept to Market.</h1>
+          <h1 id="hero-title">Beauty Manufacturing, From Concept to Market.</h1>
           <p class="lead">From fragrance formulation and packaging development to scalable production, ZUOFUN helps beauty brands bring ideas to life.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#offer">Explore OEM/ODM Solutions <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="btn btn-ghost" href="https://zuofunperfumes.com" target="_blank" rel="noopener">Visit Our Brand</a>
+            <a class="btn btn-primary" href="#offer">Explore OEM/ODM <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://zuofunperfumes.com" target="_blank" rel="noopener">Visit ZUOFUN Maison <span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="hero-visual-stage">
-            <img class="hero-photo" src="assets/images/hero-product.svg" alt="Editorial still of a fragrance bottle in a dark studio. Replace with an approved product photograph." />
+            <img class="hero-photo" src="assets/images/hero-manufacturing.jpg" width="1536" height="864" alt="ZUOFUN filling line: gloved hands placing gold-capped fragrance bottles on a stainless conveyor." />
           </div>
         </div>
       </div>
@@ -118,7 +134,7 @@
         </div>
         <div class="product-grid">
           <a class="product-card product-card--lead reveal" href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/cat-fragrance.svg" alt="Placeholder fragrance bottle still" /></div>
+            <div class="media"><img src="assets/images/product-fragrance.jpg" alt="Jardin eau de parfum bottle manufactured by ZUOFUN" /></div>
             <div class="body">
               <h3>Fragrance</h3>
               <p>Fine fragrance, body mists, and private-label perfume programs.</p>
@@ -126,7 +142,7 @@
             </div>
           </a>
           <a class="product-card reveal" href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/cat-home.svg" alt="Placeholder home fragrance still" /></div>
+            <div class="media"><img src="assets/images/product-aromatherapy.jpg" alt="CARLOTTA reed diffusers and packaging produced by ZUOFUN" /></div>
             <div class="body">
               <h3>Home Fragrance / Aromatherapy</h3>
               <p>Home scent, diffusers, and aromatherapy products for retail programs.</p>
@@ -134,7 +150,7 @@
             </div>
           </a>
           <a class="product-card reveal" href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/cat-skincare.svg" alt="Placeholder skincare bottle still" /></div>
+            <div class="media"><img src="assets/images/product-skincare.jpg" alt="CARLOTTA Purple Love body lotion, a ZUOFUN-manufactured body care product" /></div>
             <div class="body">
               <h3>Skincare &amp; Body Care</h3>
               <p>Skincare and body care formulas with filling and packaging support.</p>
@@ -142,7 +158,7 @@
             </div>
           </a>
           <a class="product-card product-card--wide reveal" href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/cat-makeup.svg" alt="Placeholder makeup still" /></div>
+            <div class="media"><img src="assets/images/product-makeup.jpg" alt="Pressed powder, lipstick, and color cosmetics from the ZUOFUN makeup range" /></div>
             <div class="body">
               <h3>Makeup</h3>
               <p>Color cosmetics from sampling through mass production.</p>
@@ -168,7 +184,7 @@
           </div>
         </div>
         <div class="about-visual reveal">
-          <img src="assets/images/about-rd.svg" alt="Labeled placeholder for an approved laboratory or R&amp;D photograph. Not a live factory photo." />
+          <img src="assets/images/about-rd.jpg" alt="ZUOFUN R&amp;D laboratory with branded workstations, glassware, and formulation benches." />
         </div>
       </div>
     </section>
@@ -184,6 +200,7 @@
         </div>
         <div class="offer-grid">
           <article class="offer-card reveal">
+            <div class="media"><img src="assets/images/service-private-label.jpg" alt="Fragrance formulation: a pipette adding a drop into a laboratory beaker" /></div>
             <span class="kicker">Mode 01</span>
             <h3>Private Label</h3>
             <p class="for">For brands using proven formulas under their own name.</p>
@@ -191,6 +208,7 @@
             <a class="btn btn-line" href="https://www.zuofun.com/private-label-cosmetics/" target="_blank" rel="noopener">Explore Private Label <span class="arrow">→</span></a>
           </article>
           <article class="offer-card reveal">
+            <div class="media"><img src="assets/images/service-low-moq.jpg" alt="Low-volume filling: gold-capped bottles being placed on a production conveyor" /></div>
             <span class="kicker">Mode 02</span>
             <h3>Low MOQ Customized</h3>
             <p class="for">For first launches and market tests.</p>
@@ -198,6 +216,7 @@
             <a class="btn btn-line" href="#pending-low-moq" data-pending="Low MOQ destination URL is pending confirmation.">Explore Low MOQ <span class="arrow">→</span></a>
           </article>
           <article class="offer-card reveal">
+            <div class="media"><img src="assets/images/service-one-stop.jpg" alt="Guangzhou Zuofun Cosmetics factory exterior and campus entrance" /></div>
             <span class="kicker">Mode 03</span>
             <h3>One-stop OEM/ODM Service</h3>
             <p class="for">For concept-to-shelf projects.</p>
@@ -205,6 +224,7 @@
             <a class="btn btn-line" href="#pending-one-stop" data-pending="One-stop OEM/ODM URL needs verification.">Explore OEM/ODM <span class="arrow">→</span></a>
           </article>
           <article class="offer-card reveal">
+            <div class="media"><img src="assets/images/service-wholesale.jpg" alt="Rows of filled amber spray bottles ready for wholesale packing" /></div>
             <span class="kicker">Mode 04</span>
             <h3>Wholesale Ready-to-Sell</h3>
             <p class="for">For distributors and retailers sourcing finished goods.</p>
@@ -260,27 +280,27 @@
             <p class="eyebrow">07 · Factory &amp; R&amp;D</p>
             <h2 id="factory-title">Evidence of the operation, not a stock collage.</h2>
           </div>
-          <p>Clear placeholders until approved photographs are supplied. Click a panel for a larger view. No audio. No autoplay.</p>
+          <p>Photographs taken from the current public ZUOFUN site. Click a panel for a larger view. Quality control stays as a labeled placeholder until a dedicated still is available. No audio. No autoplay.</p>
         </div>
         <div class="gallery">
-          <button class="tall" type="button" data-lightbox data-image="assets/images/factory-line.svg" data-caption="Production line — labeled placeholder, not a live factory photo">
-            <img src="assets/images/factory-line.svg" alt="Labeled placeholder for a production line photograph" />
+          <button class="tall" type="button" data-lightbox data-image="assets/images/factory-line.jpg" data-caption="Workshop overview from the live ZUOFUN homepage">
+            <img src="assets/images/factory-line.jpg" alt="ZUOFUN workshop collage: mixing tanks, filling line, and factory exterior" />
             <span class="caption">Production line</span>
           </button>
-          <button type="button" data-lightbox data-image="assets/images/factory-lab.svg" data-caption="Laboratory — labeled placeholder">
-            <img src="assets/images/factory-lab.svg" alt="Labeled placeholder for a laboratory photograph" />
+          <button type="button" data-lightbox data-image="assets/images/factory-rd-lab.jpg" data-caption="R&amp;D laboratory from zuofun.com/rd-experiences/">
+            <img src="assets/images/factory-rd-lab.jpg" alt="ZUOFUN R&amp;D laboratory benches with mint-green cabinetry" />
             <span class="caption">Laboratory</span>
           </button>
-          <button type="button" data-lightbox data-image="assets/images/factory-fill.svg" data-caption="Filling and packing — labeled placeholder">
-            <img src="assets/images/factory-fill.svg" alt="Labeled placeholder for filling and packing" />
+          <button type="button" data-lightbox data-image="assets/images/factory-fill.jpg" data-caption="Filled spray bottles from the live homepage wholesale banner">
+            <img src="assets/images/factory-fill.jpg" alt="Amber spray bottles lined up after filling" />
             <span class="caption">Filling / packing</span>
           </button>
-          <button type="button" data-lightbox data-image="assets/images/factory-qc.svg" data-caption="Quality control — labeled placeholder">
-            <img src="assets/images/factory-qc.svg" alt="Labeled placeholder for quality control" />
+          <button type="button" data-lightbox data-image="assets/images/factory-qc.svg" data-caption="Quality control — labeled placeholder; no dedicated public QC still found">
+            <img src="assets/images/factory-qc.svg" alt="Labeled placeholder for a quality control photograph" />
             <span class="caption">Quality control</span>
           </button>
-          <button type="button" data-lightbox data-image="assets/images/factory-team.svg" data-caption="Team / R&amp;D environment — labeled placeholder">
-            <img src="assets/images/factory-team.svg" alt="Labeled placeholder for team or R&amp;D environment" />
+          <button type="button" data-lightbox data-image="assets/images/factory-team.jpg" data-caption="R&amp;D team photograph from zuofun.com/rd-experiences/">
+            <img src="assets/images/factory-team.jpg" alt="ZUOFUN laboratory team in white coats" />
             <span class="caption">Team / R&amp;D</span>
           </button>
         </div>
@@ -351,7 +371,7 @@
         <div class="news-grid">
           <article class="news-card reveal" data-wp-post="sample">
             <a href="https://www.zuofun.com/news/" target="_blank" rel="noopener">
-              <img src="assets/images/news-1.svg" alt="" />
+              <img src="assets/images/news-canton-fair.jpg" alt="" />
               <div class="body">
                 <div class="news-meta"><span>Company</span><time datetime="2026-08-01">01 Aug 2026</time></div>
                 <h3>Sample title: How we brief a new fragrance program</h3>
@@ -361,7 +381,7 @@
           </article>
           <article class="news-card reveal" data-wp-post="sample">
             <a href="https://www.zuofun.com/news/" target="_blank" rel="noopener">
-              <img src="assets/images/news-2.svg" alt="" />
+              <img src="assets/images/news-fragrance-insight.jpg" alt="" />
               <div class="body">
                 <div class="news-meta"><span>Manufacturing</span><time datetime="2026-07-18">18 Jul 2026</time></div>
                 <h3>Sample title: What “low MOQ” should mean in writing</h3>
@@ -371,7 +391,7 @@
           </article>
           <article class="news-card reveal" data-wp-post="sample">
             <a href="https://www.zuofun.com/news/" target="_blank" rel="noopener">
-              <img src="assets/images/news-3.svg" alt="" />
+              <img src="assets/images/news-product-story.jpg" alt="" />
               <div class="body">
                 <div class="news-meta"><span>Packaging</span><time datetime="2026-07-02">02 Jul 2026</time></div>
                 <h3>Sample title: Packaging decisions that change the fill line</h3>
