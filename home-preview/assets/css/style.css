@@ -7,7 +7,7 @@
   --dark: #292929;
   --mid: #727272;
   --line: #e5e3df;
-  --header-h: 72px;
+  --header-h: 92px;
   --ease: cubic-bezier(.22, .7, .2, 1);
   --max: 1180px;
 }
@@ -118,7 +118,7 @@ h1, h2, h3, .serif {
 }
 .site-header.is-scrolled,
 .site-header.menu-open {
-  --header-h: 58px;
+  --header-h: 80px;
   background: rgba(255, 255, 255, .94);
   box-shadow: 0 8px 22px rgba(17, 17, 17, .05);
 }
@@ -133,21 +133,24 @@ h1, h2, h3, .serif {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  flex-shrink: 0;
   width: auto;
   height: auto;
   min-height: 44px;
   text-decoration: none;
 }
 .logo-img {
+  display: block;
   width: auto;
-  height: 32px;
+  height: 48px;
+  max-width: none;
   object-fit: contain;
   object-position: left center;
   transition: height .3s var(--ease);
 }
 .site-header.is-scrolled .logo-img,
 .site-header.menu-open .logo-img {
-  height: 28px;
+  height: 44px;
 }
 .nav {
   display: flex;
@@ -253,63 +256,58 @@ h1, h2, h3, .serif {
 /* Hero */
 .hero {
   position: relative;
+  z-index: 1;
   margin-top: calc(var(--header-h) * -1);
-  min-height: 100svh;
   background: var(--warm);
   overflow: hidden;
 }
-.hero-visual {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 64%;
-  overflow: hidden;
-  background: transparent;
-  pointer-events: none;
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 40%) minmax(0, 60%);
+  align-items: stretch;
+  min-height: 100svh;
+  width: 100%;
 }
-.hero-visual::after {
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--warm);
+  padding: calc(var(--header-h) + 36px) 36px 72px max(48px, calc((100vw - 1360px) / 2 + 24px));
+}
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  margin-left: -6%;
+  overflow: hidden;
+  background: var(--warm);
+}
+.hero-visual::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    var(--warm) 0%,
-    rgba(247, 245, 242, .92) 12%,
-    rgba(247, 245, 242, .35) 32%,
-    rgba(247, 245, 242, 0) 48%
-  );
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: 28%;
+  background: linear-gradient(90deg, var(--warm) 0%, rgba(247, 245, 242, 0) 100%);
   pointer-events: none;
-}
-.hero-visual-stage {
-  position: absolute;
-  inset: 0 -4% 0 0;
-  will-change: transform;
 }
 .hero-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 72% 48%;
-  transform: scale(1.02);
-}
-.hero-copy {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: min(42vw, 520px);
   min-height: 100svh;
-  padding: calc(var(--header-h) + 28px) 24px 72px max(48px, calc((100vw - 1360px) / 2 + 24px));
+  object-fit: cover;
+  object-position: 68% 46%;
 }
 .hero .eyebrow {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-size: 11px;
   letter-spacing: .22em;
 }
 .hero h1 {
-  margin: 0 0 22px;
+  margin: 0 0 20px;
   font-size: clamp(40px, 4.1vw, 58px);
   line-height: 1.08;
   max-width: 11em;
@@ -326,7 +324,7 @@ h1, h2, h3, .serif {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 36px;
+  margin-top: 32px;
 }
 .hero .btn-ghost {
   border-color: rgba(17, 17, 17, .28);
@@ -336,21 +334,6 @@ h1, h2, h3, .serif {
   background: var(--black);
   color: var(--white);
 }
-
-@keyframes heroRise {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: none; }
-}
-.js-ready .hero-copy .eyebrow,
-.js-ready .hero-copy h1,
-.js-ready .hero-copy .lead,
-.js-ready .hero-copy .hero-actions {
-  opacity: 0;
-  animation: heroRise .55s var(--ease) forwards;
-}
-.js-ready .hero-copy h1 { animation-delay: .1s; }
-.js-ready .hero-copy .lead { animation-delay: .18s; }
-.js-ready .hero-copy .hero-actions { animation-delay: .26s; }
 
 /* Sections */
 .section { padding: clamp(72px, 9vw, 120px) 0; }
@@ -852,13 +835,11 @@ h1, h2, h3, .serif {
 }
 
 @media (max-width: 1024px) {
-  .hero-copy {
-    width: min(46vw, 460px);
-    padding: calc(var(--header-h) + 24px) 28px 56px 32px;
-  }
+  .hero-layout { grid-template-columns: minmax(300px, 42%) minmax(0, 58%); }
+  .hero-copy { padding: calc(var(--header-h) + 28px) 28px 56px 32px; }
   .hero h1 { font-size: clamp(36px, 4vw, 48px); }
-  .hero-visual { width: 68%; }
-  .hero-photo { object-position: 78% 46%; }
+  .hero-visual { margin-left: -4%; }
+  .hero-photo { object-position: 72% 46%; }
   .about-grid,
   .why-layout,
   .market-layout,
@@ -962,14 +943,16 @@ h1, h2, h3, .serif {
   }
   .hero {
     min-height: 0;
+  }
+  .hero-layout {
     display: flex;
     flex-direction: column;
+    min-height: 0;
   }
   .hero-copy {
     width: 100%;
     min-height: 0;
     padding: calc(var(--header-h) + 28px) 24px 28px;
-    order: 1;
   }
   .hero .eyebrow { margin-bottom: 14px; }
   .hero h1 {
@@ -990,27 +973,23 @@ h1, h2, h3, .serif {
   }
   .hero-actions .btn { width: 100%; }
   .hero-visual {
-    position: relative;
-    order: 2;
     width: 100%;
-    height: auto;
+    margin-left: 0;
     min-height: 0;
+    height: auto;
     aspect-ratio: 4 / 5;
-    max-height: 58svh;
-    pointer-events: none;
+    max-height: 56svh;
   }
-  .hero-visual::after {
-    background: linear-gradient(
-      180deg,
-      var(--warm) 0%,
-      rgba(247, 245, 242, .55) 12%,
-      rgba(247, 245, 242, 0) 28%
-    );
+  .hero-visual::before {
+    width: 100%;
+    height: 22%;
+    inset: 0;
+    background: linear-gradient(180deg, var(--warm) 0%, rgba(247, 245, 242, 0) 100%);
   }
-  .hero-visual-stage { inset: 0; }
   .hero-photo {
+    min-height: 0;
+    height: 100%;
     object-position: 68% 42%;
-    transform: none;
   }
   .product-grid,
   .offer-grid,
@@ -1031,14 +1010,6 @@ h1, h2, h3, .serif {
     animation: none !important;
     transition: none !important;
   }
-  .hero-visual img,
-  .hero-visual-stage { transform: none !important; }
-  .js-ready .hero-copy .eyebrow,
-  .js-ready .hero-copy h1,
-  .js-ready .hero-copy .lead,
-  .js-ready .hero-copy .hero-actions {
-    opacity: 1;
-    animation: none;
-  }
+  .hero-visual img { transform: none !important; }
   .reveal, .process-item { opacity: 1; transform: none; }
 }
