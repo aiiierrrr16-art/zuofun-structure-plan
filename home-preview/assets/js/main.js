@@ -166,7 +166,7 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         whyItems.forEach(function (item, index) {
-          window.setTimeout(function () { item.classList.add("is-in"); }, index * 90);
+          window.setTimeout(function () { item.classList.add("is-in"); }, index * 80);
         });
         whyIo.disconnect();
       });
