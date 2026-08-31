@@ -68,11 +68,88 @@
     });
   });
   window.addEventListener("resize", function () {
-    if (desktopNav.matches) closeMenu();
+    if (desktopNav.matches) {
+      closeMenu();
+      navItems.forEach(function (item) {
+        if (item.classList.contains("is-open")) positionDropdown(item);
+      });
+    } else {
+      closeDesktopDropdowns();
+    }
+  });
+
+  const navItems = [...document.querySelectorAll(".nav-item")];
+  let dropdownTimer = 0;
+
+  function closeDesktopDropdowns() {
+    navItems.forEach(function (item) {
+      item.classList.remove("is-open");
+      const btn = item.querySelector(".nav-subtoggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+      const dd = item.querySelector(".dropdown");
+      if (dd) {
+        dd.style.top = "";
+        dd.style.left = "";
+      }
+    });
+  }
+
+  function positionDropdown(item) {
+    const dd = item.querySelector(".dropdown");
+    if (!dd || !desktopNav.matches) return;
+    const rect = item.getBoundingClientRect();
+    dd.style.top = Math.round(rect.bottom - 4) + "px";
+    dd.style.left = Math.round(rect.left) + "px";
+  }
+
+  function openDesktopDropdown(item) {
+    if (!desktopNav.matches) return;
+    navItems.forEach(function (other) {
+      if (other === item) return;
+      other.classList.remove("is-open");
+      const otherBtn = other.querySelector(".nav-subtoggle");
+      if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+      const otherDd = other.querySelector(".dropdown");
+      if (otherDd) {
+        otherDd.style.top = "";
+        otherDd.style.left = "";
+      }
+    });
+    item.classList.add("is-open");
+    const btn = item.querySelector(".nav-subtoggle");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+    positionDropdown(item);
+  }
+
+  navItems.forEach(function (item) {
+    item.addEventListener("mouseenter", function () {
+      if (!desktopNav.matches) return;
+      window.clearTimeout(dropdownTimer);
+      openDesktopDropdown(item);
+    });
+    item.addEventListener("mouseleave", function () {
+      if (!desktopNav.matches) return;
+      dropdownTimer = window.setTimeout(closeDesktopDropdowns, 180);
+    });
+    item.addEventListener("focusin", function () {
+      if (!desktopNav.matches) return;
+      window.clearTimeout(dropdownTimer);
+      openDesktopDropdown(item);
+    });
+  });
+
+  document.addEventListener("mousedown", function (event) {
+    if (!desktopNav.matches) return;
+    if (!event.target.closest(".nav-item")) closeDesktopDropdowns();
   });
 
   window.addEventListener("scroll", function () {
     setHeader();
+    if (desktopNav.matches) {
+      navItems.forEach(function (item) {
+        if (item.classList.contains("is-open")) positionDropdown(item);
+      });
+    }
   }, { passive: true });
   setHeader();
 
@@ -119,6 +196,7 @@
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeLightbox();
+      closeDesktopDropdowns();
       closeMenu();
     }
   });

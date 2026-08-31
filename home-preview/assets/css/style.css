@@ -37,8 +37,9 @@ body {
   font-family: var(--font-ui);
   font-size: 17px;
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
+main { overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; }
 a { color: inherit; }
@@ -141,10 +142,11 @@ h1, h2, h3, .serif {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 80;
   height: var(--header-h);
   display: flex;
   align-items: center;
+  overflow: visible;
   background: var(--white);
   border-bottom: 1px solid transparent;
   transition: background .3s var(--ease), height .3s var(--ease), border-color .3s var(--ease);
@@ -162,6 +164,7 @@ h1, h2, h3, .serif {
   display: flex;
   align-items: center;
   gap: 32px;
+  overflow: visible;
 }
 .logo {
   display: flex;
@@ -201,7 +204,10 @@ h1, h2, h3, .serif {
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
-.nav-item { position: relative; }
+.nav-item { position: relative; z-index: 1; }
+.nav-item.is-open,
+.nav-item:hover,
+.nav-item:focus-within { z-index: 5; }
 .nav-link {
   display: inline-flex;
   align-items: center;
@@ -235,32 +241,88 @@ h1, h2, h3, .serif {
 }
 .dropdown {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
-  min-width: 236px;
-  padding: 8px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  z-index: 90;
+  width: 300px;
+  padding: 10px 0 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility .22s;
+  pointer-events: none;
+  transform: none;
+  transition: opacity .18s var(--ease), visibility .18s;
 }
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown {
+@media (min-width: 769px) {
+  .dropdown {
+    position: fixed;
+    top: var(--header-h);
+  }
+}
+.dropdown--products {
+  width: 300px;
+  left: 0;
+  right: auto;
+}
+.dropdown-panel {
+  background: #ffffff;
+  border: 1px solid #e8e6e2;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, .06);
+}
+.nav-item.is-open > .dropdown {
   opacity: 1;
   visibility: visible;
-  transform: none;
+  pointer-events: auto;
 }
-.dropdown a {
+.dropdown a,
+.dropdown-panel a {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   min-height: 44px;
-  padding: 0 12px;
-  border-radius: 8px;
+  padding: 0;
+  border-radius: 0;
+  color: var(--dark);
   text-decoration: none;
-  font-size: 14px;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
-.dropdown a:hover { background: var(--warm); }
+.dropdown a .arrow,
+.dropdown-panel a .arrow {
+  flex: 0 0 auto;
+  color: inherit;
+  opacity: .35;
+  font-size: 14px;
+  transition: transform .28s var(--ease), opacity .28s var(--ease), color .28s var(--ease);
+}
+.dropdown a:hover,
+.dropdown a:focus-visible,
+.dropdown-panel a:hover,
+.dropdown-panel a:focus-visible {
+  background: none;
+  color: var(--brand-red);
+}
+.dropdown a:hover .arrow,
+.dropdown a:focus-visible .arrow,
+.dropdown-panel a:hover .arrow,
+.dropdown-panel a:focus-visible .arrow {
+  opacity: 1;
+  color: var(--brand-red);
+  transform: translateX(4px);
+}
+.dropdown-all {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eceae6;
+}
 .menu-close { display: none; }
 .menu-toggle {
   display: none;
@@ -994,12 +1056,26 @@ h1, h2, h3, .serif {
   .dropdown {
     display: none;
     position: static;
+    width: auto;
+    padding: 0 0 8px 8px;
+    border: 0;
+    background: none;
+    box-shadow: none;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: none;
+  }
+  .dropdown-panel {
+    padding: 0;
+    background: none;
     border: 0;
-    padding: 0 0 8px 8px;
+    border-radius: 0;
     box-shadow: none;
+  }
+  .dropdown a,
+  .dropdown-panel a {
+    padding: 0 12px;
   }
   .nav-item.is-open .dropdown { display: block; }
   .header-cta {

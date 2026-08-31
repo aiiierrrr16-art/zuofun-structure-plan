@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=hero-editorial-blend-4" />
+  <link rel="stylesheet" href="assets/css/style.css?v=products-dropdown-1" />
   <!-- Schema is a preview example only. Replace with live Rank Math data before launch. Do not use NewsArticle on the homepage. -->
   <script type="application/ld+json">
   {
@@ -52,12 +52,14 @@
               <a class="nav-link" href="#products">Products</a>
               <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-products" aria-label="Open Products submenu"></button>
             </div>
-            <div class="dropdown" id="sub-products">
-              <a href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">Fragrance</a>
-              <a href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">Home Fragrance</a>
-              <a href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">Skincare &amp; Body Care</a>
-              <a href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">Makeup</a>
-              <a href="https://www.zuofun.com/product/" target="_blank" rel="noopener">All Products</a>
+            <div class="dropdown dropdown--products" id="sub-products">
+              <div class="dropdown-panel">
+                <a href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">Fragrance <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">Home Fragrance <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">Skincare &amp; Body Care <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">Makeup <span class="arrow" aria-hidden="true">→</span></a>
+                <a class="dropdown-all" href="https://www.zuofun.com/product/" target="_blank" rel="noopener">View All Products <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -66,10 +68,12 @@
               <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-offer" aria-label="Open Work With Us submenu"></button>
             </div>
             <div class="dropdown" id="sub-offer">
-              <a href="#offer">Private Label</a>
-              <a href="#pending-low-moq" data-pending="Low MOQ page URL is pending confirmation.">Low MOQ Customized</a>
-              <a href="#pending-one-stop" data-pending="One-stop OEM/ODM URL needs verification.">One-stop OEM/ODM</a>
-              <a href="#pending-wholesale" data-pending="Wholesale URL is pending confirmation.">Wholesale Ready-to-Sell</a>
+              <div class="dropdown-panel">
+                <a href="#offer">Private Label <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#pending-low-moq" data-pending="Low MOQ page URL is pending confirmation.">Low MOQ Customized <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#pending-one-stop" data-pending="One-stop OEM/ODM URL needs verification.">One-stop OEM/ODM <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#pending-wholesale" data-pending="Wholesale URL is pending confirmation.">Wholesale Ready-to-Sell <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -78,10 +82,12 @@
               <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-expertise" aria-label="Open Expertise submenu"></button>
             </div>
             <div class="dropdown" id="sub-expertise">
-              <a href="#process">Formula Development</a>
-              <a href="#pending-packaging" data-pending="Packaging Development page is not confirmed yet.">Packaging Design</a>
-              <a href="#factory">Manufacturing</a>
-              <a href="#certifications">Quality &amp; Compliance</a>
+              <div class="dropdown-panel">
+                <a href="#process">Formula Development <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#pending-packaging" data-pending="Packaging Development page is not confirmed yet.">Packaging Design <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#factory">Manufacturing <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#certifications">Quality &amp; Compliance <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -90,10 +96,12 @@
               <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="Open About submenu"></button>
             </div>
             <div class="dropdown" id="sub-about">
-              <a href="https://www.zuofun.com/about/" target="_blank" rel="noopener">Who We Are</a>
-              <a href="#factory">Factory &amp; R&amp;D</a>
-              <a href="#certifications">Certifications</a>
-              <a href="#markets">Global Markets</a>
+              <div class="dropdown-panel">
+                <a href="https://www.zuofun.com/about/" target="_blank" rel="noopener">Who We Are <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#factory">Factory &amp; R&amp;D <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#certifications">Certifications <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#markets">Global Markets <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
             </div>
           </div>
           <a class="nav-link" href="#news">News</a>
@@ -519,6 +527,6 @@
     <img alt="" />
     <p class="lightbox-caption"></p>
   </div>
-  <script src="assets/js/main.js?v=hero-editorial-3"></script>
+  <script src="assets/js/main.js?v=products-dropdown-1"></script>
 </body>
 </html>
