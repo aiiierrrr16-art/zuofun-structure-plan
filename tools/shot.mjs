@@ -89,15 +89,9 @@ if (sizeArg === "fullPage") {
   clip = { x: 0, y: 0, width, height: Number(sizeArg), scale: 1 };
 }
 
-await send("Emulation.setDeviceMetricsOverride", {
-  width,
-  height: clip.height,
-  deviceScaleFactor: 1,
-  mobile,
-  screenWidth: width,
-  screenHeight: clip.height,
-});
-await sleep(1200);
+// The viewport stays at a realistic height so vh-based layout is not distorted;
+// captureBeyondViewport handles the taller clip.
+await sleep(600);
 
 const shot = await send("Page.captureScreenshot", { format: "png", clip, captureBeyondViewport: true });
 writeFileSync(out, Buffer.from(shot.data, "base64"));
