@@ -16,12 +16,26 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const desktopNav = window.matchMedia("(min-width: 769px)");
 
+  const hero = document.querySelector(".hero");
+  const heroVisual = document.querySelector(".hero-visual");
+
   function setHeader() {
     const y = window.scrollY;
     const scrolled = header.classList.contains("is-scrolled");
+    // Hysteresis: the two thresholds never meet, so a single pixel cannot toggle the class
     if (!scrolled && y > 100) header.classList.add("is-scrolled");
     else if (scrolled && y < 60) header.classList.remove("is-scrolled");
     toTop.classList.toggle("is-visible", y > 560);
+  }
+
+  function setHeroParallax() {
+    if (!heroVisual) return;
+    if (reduceMotion || !desktopNav.matches) {
+      heroVisual.style.transform = "";
+      return;
+    }
+    const shift = Math.min(window.scrollY, 700) * 0.06;
+    heroVisual.style.transform = "translate3d(0, " + shift.toFixed(1) + "px, 0)";
   }
 
   let scrollTick = false;
@@ -31,6 +45,7 @@
     window.requestAnimationFrame(function () {
       scrollTick = false;
       setHeader();
+      setHeroParallax();
       if (desktopNav.matches) {
         navItems.forEach(function (item) {
           if (item.classList.contains("is-open")) positionDropdown(item);
@@ -116,8 +131,10 @@
     const dd = item.querySelector(".dropdown");
     if (!dd || !desktopNav.matches) return;
     const rect = item.getBoundingClientRect();
+    const width = dd.offsetWidth || 300;
+    const maxLeft = window.innerWidth - width - 16;
     dd.style.top = Math.round(rect.bottom - 4) + "px";
-    dd.style.left = Math.round(rect.left) + "px";
+    dd.style.left = Math.round(Math.max(16, Math.min(rect.left, maxLeft))) + "px";
   }
 
   function openDesktopDropdown(item) {
@@ -163,6 +180,33 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
   setHeader();
+  setHeroParallax();
+
+  if (hero) {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () { hero.classList.add("is-ready"); });
+    });
+  }
+
+  const solutionItems = [...document.querySelectorAll(".solution-item")];
+  const solutionImages = [...document.querySelectorAll(".solution-image")];
+
+  function setSolution(key) {
+    solutionItems.forEach(function (item) {
+      item.classList.toggle("is-active", item.dataset.solution === key);
+    });
+    solutionImages.forEach(function (img) {
+      img.classList.toggle("is-active", img.dataset.solution === key);
+    });
+  }
+
+  solutionItems.forEach(function (item) {
+    function activate() {
+      if (desktopNav.matches) setSolution(item.dataset.solution);
+    }
+    item.addEventListener("mouseenter", activate);
+    item.addEventListener("focus", activate);
+  });
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) {

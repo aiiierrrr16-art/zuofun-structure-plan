@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=products-editorial-1" />
+  <link rel="stylesheet" href="assets/css/style.css?v=hero-solutions-1" />
   <!-- Schema is a preview example only. Replace with live Rank Math data before launch. Do not use NewsArticle on the homepage. -->
   <script type="application/ld+json">
   {
@@ -105,8 +105,27 @@
             </div>
           </div>
           <a class="nav-link" href="#news">News</a>
+          <a class="header-cta" href="#inquiry">Start Your Project</a>
+          <div class="nav-item nav-item--lang">
+            <div class="nav-row">
+              <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="sub-lang">
+                <svg class="lang-globe" viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7.4" />
+                  <path d="M2.6 10h14.8M10 2.6c1.9 2 3 4.6 3 7.4s-1.1 5.4-3 7.4c-1.9-2-3-4.6-3-7.4s1.1-5.4 3-7.4Z" />
+                </svg>
+                EN
+                <span class="lang-caret" aria-hidden="true"></span>
+              </button>
+              <button class="nav-subtoggle" type="button" aria-expanded="false" aria-controls="sub-lang" aria-label="Open language menu"></button>
+            </div>
+            <div class="dropdown dropdown--lang" id="sub-lang">
+              <div class="dropdown-panel">
+                <a href="#hero" aria-current="true">English <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="#pending-lang" data-pending="Additional site languages are pending company confirmation.">Other languages <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a class="header-cta" href="#inquiry">Start Your Project</a>
       </nav>
     </div>
   </header>
@@ -114,10 +133,10 @@
   <main id="main">
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">Beauty Manufacturing · OEM / ODM</p>
-        <h1 id="hero-title">From Idea<br />to Beauty.</h1>
-        <p class="lead">Fragrance and beauty manufacturing,<br />from formulation to production.</p>
-        <div class="hero-actions">
+        <p class="eyebrow hero-fade">Beauty Manufacturing · OEM / ODM</p>
+        <h1 id="hero-title" class="hero-fade">Beauty,<br />Made Possible.</h1>
+        <p class="lead hero-fade">Formulation · Packaging · Manufacturing</p>
+        <div class="hero-actions hero-fade">
           <a class="btn btn-primary" href="#offer">Explore OEM/ODM <span class="arrow" aria-hidden="true">→</span></a>
           <a class="hero-brand-link" href="https://zuofunperfumes.com" target="_blank" rel="noopener">Visit Our Brand <span aria-hidden="true">↗</span></a>
         </div>
@@ -125,48 +144,62 @@
       <div class="hero-visual">
         <img class="hero-photo" src="assets/images/hero-formulation.jpg" width="1920" height="1080" alt="Fragrance formulation at ZUOFUN: a glass dropper releasing a drop into a beaker beside botanical samples." />
       </div>
+      <a class="hero-scroll" href="#products">
+        <span class="hero-scroll-label">Scroll</span>
+        <span class="hero-scroll-line" aria-hidden="true"></span>
+      </a>
     </section>
 
-    <section class="section products" id="products" aria-labelledby="products-title">
-      <div class="wrap">
-        <header class="products-head">
+    <section class="section solutions" id="products" aria-labelledby="products-title">
+      <div class="wrap solutions-layout">
+        <div class="solutions-copy">
           <p class="eyebrow">Product Solutions</p>
-          <h2 id="products-title">Beauty Across Every Category.</h2>
-          <p>Explore fragrance, personal care and cosmetic manufacturing solutions.</p>
-        </header>
-        <div class="product-grid">
-          <a class="product-card product-card--fragrance reveal" href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/product-fragrance.jpg" alt="Maison Z Muse eau de parfum bottle by ZUOFUN, styled with white silk and freesia." /></div>
-            <div class="body">
-              <h3>Fragrance</h3>
-              <p>Fine fragrance and customized scent development.</p>
-              <span class="more">Explore <span class="arrow" aria-hidden="true">→</span></span>
-            </div>
+          <h2 id="products-title">What we manufacture.</h2>
+          <ul class="solution-list">
+            <li class="solution-row">
+              <a class="solution-item is-active" data-solution="fragrance" href="https://www.zuofun.com/perfume2/" target="_blank" rel="noopener">
+                Fragrance <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <figure class="solution-thumb">
+                <img src="assets/images/solution-fragrance.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Maison Z Jardin eau de parfum by ZUOFUN, styled with garden roses." />
+              </figure>
+            </li>
+            <li class="solution-row">
+              <a class="solution-item" data-solution="home" href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">
+                Home Fragrance <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <figure class="solution-thumb">
+                <img src="assets/images/solution-home.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Smellology glass reed diffuser produced by ZUOFUN, on a wooden console." />
+              </figure>
+            </li>
+            <li class="solution-row">
+              <a class="solution-item" data-solution="skincare" href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">
+                Skincare &amp; Body Care <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <figure class="solution-thumb">
+                <img src="assets/images/solution-skincare.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="CARLOTTA Purple Love body lotion by ZUOFUN, with the cream texture on skin." />
+              </figure>
+            </li>
+            <li class="solution-row">
+              <a class="solution-item" data-solution="makeup" href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">
+                Makeup <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <figure class="solution-thumb">
+                <img src="assets/images/solution-makeup.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Pressed powder, lipstick, and lip gloss from the ZUOFUN makeup range." />
+              </figure>
+            </li>
+          </ul>
+          <a class="solutions-all" href="https://www.zuofun.com/product/" target="_blank" rel="noopener">
+            View All Solutions <span class="arrow" aria-hidden="true">→</span>
           </a>
-          <a class="product-card product-card--home reveal" href="https://www.zuofun.com/aromatherapy2/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/product-aromatherapy.jpg" alt="CARLOTTA reed diffusers and packaging produced by ZUOFUN." /></div>
-            <div class="body">
-              <h3>Home Fragrance</h3>
-              <p>Scent solutions for home and lifestyle collections.</p>
-              <span class="more">Explore <span class="arrow" aria-hidden="true">→</span></span>
-            </div>
-          </a>
-          <a class="product-card product-card--skincare reveal" href="https://www.zuofun.com/skincares/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/product-skincare.jpg" alt="CARLOTTA Purple Love body lotion with visible cream texture, manufactured by ZUOFUN." /></div>
-            <div class="body">
-              <h3>Skincare &amp; Body Care</h3>
-              <p>Product development for skincare and personal care.</p>
-              <span class="more">Explore <span class="arrow" aria-hidden="true">→</span></span>
-            </div>
-          </a>
-          <a class="product-card product-card--makeup reveal" href="https://www.zuofun.com/makeups/" target="_blank" rel="noopener">
-            <div class="media"><img src="assets/images/product-makeup.jpg" alt="Pressed powder, lipstick, and color cosmetics from the ZUOFUN makeup range." /></div>
-            <div class="body">
-              <h3>Makeup</h3>
-              <p>Manufacturing solutions for modern color cosmetics.</p>
-              <span class="more">Explore <span class="arrow" aria-hidden="true">→</span></span>
-            </div>
-          </a>
+        </div>
+        <div class="solutions-visual">
+          <div class="solution-stage">
+            <img class="solution-image is-active" data-solution="fragrance" src="assets/images/solution-fragrance.jpg" width="1100" height="1100" decoding="async" alt="Maison Z Jardin eau de parfum by ZUOFUN, styled with garden roses." />
+            <img class="solution-image" data-solution="home" src="assets/images/solution-home.jpg" width="1100" height="1100" decoding="async" alt="Smellology glass reed diffuser produced by ZUOFUN, on a wooden console." />
+            <img class="solution-image" data-solution="skincare" src="assets/images/solution-skincare.jpg" width="1100" height="1100" decoding="async" alt="CARLOTTA Purple Love body lotion by ZUOFUN, with the cream texture on skin." />
+            <img class="solution-image" data-solution="makeup" src="assets/images/solution-makeup.jpg" width="900" height="900" decoding="async" alt="Pressed powder, lipstick, and lip gloss from the ZUOFUN makeup range." />
+          </div>
         </div>
       </div>
     </section>
@@ -525,6 +558,6 @@
     <img alt="" />
     <p class="lightbox-caption"></p>
   </div>
-  <script src="assets/js/main.js?v=header-sticky-hysteresis"></script>
+  <script src="assets/js/main.js?v=hero-solutions-1"></script>
 </body>
 </html>
