@@ -17,7 +17,6 @@
   const desktopNav = window.matchMedia("(min-width: 769px)");
 
   const hero = document.querySelector(".hero");
-  const heroVisual = document.querySelector(".hero-visual");
 
   function setHeader() {
     const y = window.scrollY;
@@ -28,16 +27,6 @@
     toTop.classList.toggle("is-visible", y > 560);
   }
 
-  function setHeroParallax() {
-    if (!heroVisual) return;
-    if (reduceMotion || !desktopNav.matches) {
-      heroVisual.style.transform = "";
-      return;
-    }
-    const shift = Math.min(window.scrollY, 700) * 0.06;
-    heroVisual.style.transform = "translate3d(0, " + shift.toFixed(1) + "px, 0)";
-  }
-
   let scrollTick = false;
   function onScroll() {
     if (scrollTick) return;
@@ -45,7 +34,6 @@
     window.requestAnimationFrame(function () {
       scrollTick = false;
       setHeader();
-      setHeroParallax();
       if (desktopNav.matches) {
         navItems.forEach(function (item) {
           if (item.classList.contains("is-open")) positionDropdown(item);
@@ -180,7 +168,6 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
   setHeader();
-  setHeroParallax();
 
   if (hero) {
     window.requestAnimationFrame(function () {

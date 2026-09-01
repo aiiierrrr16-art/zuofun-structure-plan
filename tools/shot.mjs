@@ -67,7 +67,29 @@ if (mobile) {
 
 await send("Page.enable");
 await send("Page.navigate", { url });
-await sleep(2500);
+await sleep(Number(process.env.WAIT ?? 2500));
+
+// Opt-in: nudge the page so IntersectionObserver-driven content commits before
+// capture. Off by default so our own captures record a true first-paint state.
+if (process.env.SETTLE) {
+  await send("Runtime.evaluate", {
+    expression: `window.scrollTo(0, document.body.scrollHeight); window.scrollTo(0, 0);`,
+  });
+  await sleep(Number(process.env.SETTLE));
+}
+
+// Optional layout probe, so geometry questions can be answered by measurement
+// rather than by eyeballing a scaled-down screenshot.
+if (process.env.PROBE) {
+  // async so a probe can await rAF-throttled handlers before reading state
+  const res = await send("Runtime.evaluate", {
+    expression: `(async () => { try { return JSON.stringify(await (async () => { ${process.env.PROBE} })(), null, 1); }
+      catch (e) { return "PROBE ERROR: " + e.message; } })()`,
+    returnByValue: true,
+    awaitPromise: true,
+  });
+  console.log("PROBE " + (res.exceptionDetails ? JSON.stringify(res.exceptionDetails) : res.result.value));
+}
 
 const { result: metrics } = await send("Runtime.evaluate", {
   expression: `JSON.stringify({ innerWidth, docHeight: document.documentElement.scrollHeight })`,
