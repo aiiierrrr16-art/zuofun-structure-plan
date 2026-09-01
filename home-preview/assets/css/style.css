@@ -145,28 +145,34 @@ h1, h2, h3, .serif {
   top: 0;
   z-index: 80;
   height: var(--header-h);
+  min-height: var(--header-h);
   display: flex;
   align-items: center;
   overflow: visible;
   background: var(--white);
   border-bottom: 1px solid transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  transition: background .3s var(--ease), height .3s var(--ease), border-color .3s var(--ease);
+  transition: background-color .3s var(--ease), border-color .3s var(--ease);
 }
 .site-header.is-scrolled,
 .site-header.menu-open {
-  --header-h: 70px;
-  background: var(--white);
+  background-color: var(--white);
   border-bottom-color: var(--line);
-  box-shadow: none;
 }
 .header-inner {
   width: min(var(--max), calc(100% - var(--page-pad) * 2));
+  height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 32px;
   overflow: visible;
+  padding-block: 12px;
+  transition: padding .3s var(--ease);
+}
+.site-header.is-scrolled .header-inner,
+.site-header.menu-open .header-inner {
+  padding-block: 8px;
 }
 .logo {
   display: flex;
@@ -174,8 +180,7 @@ h1, h2, h3, .serif {
   flex: 0 0 auto;
   flex-shrink: 0;
   width: auto;
-  height: auto;
-  min-height: 44px;
+  height: 54px;
   text-decoration: none;
 }
 .logo-img {
@@ -185,11 +190,12 @@ h1, h2, h3, .serif {
   max-width: none;
   object-fit: contain;
   object-position: left center;
-  transition: height .3s var(--ease);
+  transform-origin: left center;
+  transition: transform .3s var(--ease);
 }
 .site-header.is-scrolled .logo-img,
 .site-header.menu-open .logo-img {
-  height: 42px;
+  transform: scale(0.78);
 }
 .nav {
   display: flex;

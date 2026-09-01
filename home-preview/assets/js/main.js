@@ -17,8 +17,26 @@
   const desktopNav = window.matchMedia("(min-width: 769px)");
 
   function setHeader() {
-    header.classList.toggle("is-scrolled", window.scrollY > 20);
-    toTop.classList.toggle("is-visible", window.scrollY > 560);
+    const y = window.scrollY;
+    const scrolled = header.classList.contains("is-scrolled");
+    if (!scrolled && y > 100) header.classList.add("is-scrolled");
+    else if (scrolled && y < 60) header.classList.remove("is-scrolled");
+    toTop.classList.toggle("is-visible", y > 560);
+  }
+
+  let scrollTick = false;
+  function onScroll() {
+    if (scrollTick) return;
+    scrollTick = true;
+    window.requestAnimationFrame(function () {
+      scrollTick = false;
+      setHeader();
+      if (desktopNav.matches) {
+        navItems.forEach(function (item) {
+          if (item.classList.contains("is-open")) positionDropdown(item);
+        });
+      }
+    });
   }
 
   function closeMenu() {
@@ -143,14 +161,7 @@
     if (!event.target.closest(".nav-item")) closeDesktopDropdowns();
   });
 
-  window.addEventListener("scroll", function () {
-    setHeader();
-    if (desktopNav.matches) {
-      navItems.forEach(function (item) {
-        if (item.classList.contains("is-open")) positionDropdown(item);
-      });
-    }
-  }, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
   setHeader();
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
