@@ -1,5 +1,8 @@
 (function(){
   const body=document.body,menu=document.querySelector('.mobile-menu'),toggle=document.querySelector('.menu-toggle'),close=document.querySelector('.menu-close');
+  const header=document.querySelector('.site-header');
+  function syncHeader(){header.classList.toggle('is-scrolled',window.scrollY>24)}
+  syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
   function setMenu(open){menu.classList.toggle('is-open',open);body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open))}
   toggle.addEventListener('click',()=>setMenu(!menu.classList.contains('is-open')));close.addEventListener('click',()=>setMenu(false));menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
   const solutionData={fragrance:{text:'Fine fragrance development for private label, custom collections and wholesale distribution.',label:'Explore fragrance',url:'https://www.zuofun.com/perfume2/'},home:{text:'Reed diffusers, candles and home scent products developed for branded collections.',label:'Explore home fragrance',url:'https://www.zuofun.com/aromatherapy2/'},skincare:{text:'Skincare and body care formulas supported by product development and scalable production.',label:'Explore skin & body',url:'https://www.zuofun.com/skincares/'},makeup:{text:'Color cosmetics developed across formula, component, decoration and finished production.',label:'Explore makeup',url:'https://www.zuofun.com/makeups/'}};
