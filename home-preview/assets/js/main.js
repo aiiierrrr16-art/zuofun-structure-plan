@@ -1,15 +1,9 @@
 (function(){
-  const body=document.body;
-  const menu=document.querySelector('.menu');
-  const toggle=document.querySelector('.menu-toggle');
-  const close=document.querySelector('.menu-close');
-  function setMenu(open){menu.classList.toggle('is-open',open);body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu')}
-  toggle.addEventListener('click',()=>setMenu(!menu.classList.contains('is-open')));
-  close.addEventListener('click',()=>setMenu(false));
-  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce||!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));return}
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -8%'});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const body=document.body,menu=document.querySelector('.mobile-menu'),toggle=document.querySelector('.menu-toggle'),close=document.querySelector('.menu-close');
+  function setMenu(open){menu.classList.toggle('is-open',open);body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open))}
+  toggle.addEventListener('click',()=>setMenu(!menu.classList.contains('is-open')));close.addEventListener('click',()=>setMenu(false));menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  const solutionData={fragrance:{text:'Fine fragrance development for private label, custom collections and wholesale distribution.',label:'Explore fragrance',url:'https://www.zuofun.com/perfume2/'},home:{text:'Reed diffusers, candles and home scent products developed for branded collections.',label:'Explore home fragrance',url:'https://www.zuofun.com/aromatherapy2/'},skincare:{text:'Skincare and body care formulas supported by product development and scalable production.',label:'Explore skin & body',url:'https://www.zuofun.com/skincares/'},makeup:{text:'Color cosmetics developed across formula, component, decoration and finished production.',label:'Explore makeup',url:'https://www.zuofun.com/makeups/'}};
+  const tabs=[...document.querySelectorAll('.solution-tab')],images=[...document.querySelectorAll('.solution-image')],desc=document.querySelector('#solution-description'),link=document.querySelector('#solution-link');
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{const key=tab.dataset.solution,data=solutionData[key];tabs.forEach(t=>{const active=t===tab;t.classList.toggle('is-active',active);t.setAttribute('aria-selected',String(active))});images.forEach(img=>img.classList.toggle('is-active',img.dataset.solution===key));desc.textContent=data.text;link.textContent=data.label+' ↗';link.href=data.url}));
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce||!('IntersectionObserver'in window)){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));return}const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -7%'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 })();
