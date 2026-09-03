@@ -191,3 +191,27 @@ figure{margin:0}
 @media(max-width:1200px) and (min-width:769px){.section-progress-rail{display:block}.section-progress{left:4vw;height:clamp(300px,42vh,370px)}.hero-copy.reveal,.hero-copy.reveal.is-visible{padding-left:clamp(112px,12vw,150px)}.hero h1{font-size:clamp(58px,7.8vw,88px)}}
 @media(max-width:768px){.section-progress-rail{display:none}.hero:after{font-size:30vw;right:-4vw;top:23%}.hero-copy.reveal,.hero-copy.reveal.is-visible{top:48%;padding:0 24px;transform:translateY(-12%)}.hero-copy .eyebrow{font-size:10px;line-height:1.45;white-space:normal;max-width:310px;margin-bottom:20px}.hero h1{font-size:clamp(44px,13.5vw,61px)}.hero-lead{font-size:15px;max-width:330px;margin-top:20px}.hero-actions{margin-top:30px}.hero-scroll-indicator{bottom:24px}}
 @media(prefers-reduced-motion:reduce){.hero-image{animation:none!important;transform:none!important}.section-progress-label,.section-progress-label.is-visible,.section-progress-label.is-changing{transform:translate(0,-50%)!important;transition:opacity .18s,visibility .18s}.hero-scroll-indicator .indicator-line i,.hero-scroll-indicator .indicator-orbit,.hero-scroll-indicator .indicator-orbit:after{animation:none!important}}
+
+/* Hero spatial controls v4 */
+.hero:after{content:none}
+.project-link{height:46px;display:inline-flex;align-items:center;padding:0 25px;border:1px solid rgba(247,244,239,.78);border-radius:0;background:transparent;opacity:.78;font-size:11px;letter-spacing:.14em;transition:opacity .24s ease,background .24s ease}
+.project-link:hover,.project-link:focus-visible{opacity:1;background:rgba(247,244,239,.07)}
+.header-actions{gap:42px}
+.hero-copy.reveal,.hero-copy.reveal.is-visible{inset:50% auto auto 50%;top:50%;width:min(76vw,1120px);max-width:none;padding:0;text-align:center;transform:translate(-50%,-50%)}
+.hero h1{font-size:clamp(58px,7.55vw,122px)}
+.hero-edge-actions{position:absolute;z-index:3;inset:auto var(--pad) 56px;display:flex;align-items:flex-end;justify-content:space-between;pointer-events:none}
+.hero-edge-action{position:relative;color:rgba(247,244,239,.8);font:500 clamp(11px,.82vw,13px)/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;pointer-events:auto;transition:color .25s ease,opacity .25s ease}
+.hero-edge-action span{display:inline-block;margin-left:18px;transition:transform .25s ease}
+.hero-edge-action:after{content:"";position:absolute;left:0;bottom:-10px;width:52px;height:1px;background:currentColor;transform:scaleX(.72);transform-origin:left;transition:transform .25s ease}
+.hero-edge-action--right{text-align:right}.hero-edge-action--right:after{left:auto;right:0;transform-origin:right}
+.hero-edge-action:hover,.hero-edge-action:focus-visible{color:#fff}.hero-edge-action:hover span,.hero-edge-action:focus-visible span{transform:translateX(4px)}.hero-edge-action:hover:after,.hero-edge-action:focus-visible:after{transform:scaleX(1)}
+.hero-scroll-indicator{bottom:26px;opacity:.62}
+.section-progress{height:clamp(300px,40vh,380px);--node-color:rgba(23,23,23,.34);--active-color:var(--red);--track-color:rgba(23,23,23,.22);--read-color:rgba(23,23,23,.40)}
+.section-progress.is-dark{--node-color:rgba(255,255,255,.50);--active-color:var(--red);--track-color:rgba(255,255,255,.28);--read-color:rgba(255,255,255,.42)}
+.progress-node:before,.progress-node.is-active:before{width:11px;height:11px}
+.progress-node.is-active:before{border-color:var(--node-color)}
+.progress-node.is-active:after{display:none}
+.progress-node.is-active i{width:4px;height:4px;background:var(--red);opacity:1;animation:progress-pulse 3.8s ease-in-out infinite}
+@media(max-width:1200px) and (min-width:769px){.section-progress{height:clamp(280px,38vh,330px)}.hero-copy.reveal,.hero-copy.reveal.is-visible{width:min(78vw,900px);padding:0}.hero-edge-actions{bottom:52px}}
+@media(max-width:768px){.hero-copy.reveal,.hero-copy.reveal.is-visible{inset:48% auto auto 50%;width:calc(100% - 48px);padding:0;transform:translate(-50%,-50%)}.hero h1{font-size:clamp(44px,13vw,58px)}.hero-edge-actions{inset:auto 24px 0;display:block}.hero-edge-action{position:absolute;font-size:10px}.hero-edge-action--left{left:0;bottom:128px}.hero-edge-action--right{right:0;bottom:86px}.hero-scroll-indicator{bottom:18px;opacity:.58}.project-link{height:42px;padding:0 14px;font-size:9px}.header-actions{gap:20px}}
+@media(prefers-reduced-motion:reduce){.hero-edge-action,.hero-edge-action span,.hero-edge-action:after{transition:none!important}.progress-node.is-active i{animation:none!important}}
