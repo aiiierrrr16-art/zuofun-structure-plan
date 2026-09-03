@@ -29,7 +29,7 @@
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
-  <nav class="nav" aria-label="页面目录"><b>ZUOFUN</b><a href="#decision">范围结论</a><a href="#map">页面地图</a><a href="#templates">模板体系</a><a href="#phases">实施顺序</a></nav>
+  <nav class="nav" aria-label="项目导航"><b>ZUOFUN</b><a href="../">结构方案</a><a href="../schedule/">项目排期</a><a class="active" href="./">全站范围</a><a href="#map">页面地图</a><a href="#templates">模板体系</a></nav>
   <header class="hero" id="decision"><div class="hero-inner"><div class="eyebrow">Website redesign · full-site scope</div><h1>不是只换首页，<br>而是统一<em>整个网站。</em></h1><p>首页确定新的视觉与转化逻辑后，所有公开页面都需要进入同一套设计体系。核心页面逐页重构，产品、文章、分类和FAQ通过全局模板统一升级。</p><div class="metrics"><div class="metric"><strong>21</strong><span>核心前台页面</span></div><div class="metric"><strong>14–16</strong><span>可复用设计模板</span></div><div class="metric"><strong>381+</strong><span>现有内容对象由模板承接</span></div><div class="metric"><strong>1</strong><span>统一的全站视觉系统</span></div></div></div></header>
   <main>
     <section><div class="section-head"><div><div class="num">00 · SCOPE DECISION</div><h2>所有页面都改，<br>但不是逐页重画。</h2></div><div><p>现站共有44个公开Pages、163篇Posts、141个Products和33个Product Categories。它们都需要呈现新版风格，但实现方式不同。</p><div class="callout"><b>范围定义：</b>21个核心页面逐页规划，14–16套模板覆盖全站内容；旧URL保留或一对一301。</div></div></div><div class="countbar"><div><strong>44</strong><span>公开Pages：筛出核心页面重构</span></div><div><strong>163 + 141</strong><span>文章与产品：更换统一详情模板</span></div><div><strong>33 + 19</strong><span>分类与FAQ：模板化并进行内容治理</span></div></div></section>
@@ -47,7 +47,7 @@
   <button class="top" aria-label="返回顶部">↑</button>
   <script>
     const progress=document.querySelector('.progress');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;progress.style.width=(m?scrollY/m*100:0)+'%'},{passive:true});
-    const links=[...document.querySelectorAll('.nav a')],sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const navObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-25% 0px -65%'});sections.forEach(s=>navObserver.observe(s));
+    const links=[...document.querySelectorAll('.nav a[href^="#"]')],sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const navObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-25% 0px -65%'});sections.forEach(s=>navObserver.observe(s));
     document.querySelector('.top').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
     document.querySelectorAll('main section,.tree,.family,.decision').forEach(x=>x.classList.add('reveal'));const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.07});document.querySelectorAll('.reveal').forEach(x=>ro.observe(x));
   </script>

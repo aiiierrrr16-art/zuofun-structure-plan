@@ -43,7 +43,7 @@
 <div class="shell">
   <nav class="side" aria-label="报告目录">
     <div class="brand">ZUOFUN</div><div class="tag">STRUCTURE PLAN · V1</div>
-    <a href="#summary">方案结论</a><a href="#header">页眉菜单</a><a href="#homepage">首页结构</a><a href="#banners">Banner处置</a><a href="#footer">页脚菜单</a><a href="#pages">其他页面修改</a><a href="#backend">前后台实施</a><a href="#roadmap">实施与验收</a>
+    <a class="active" href="./">结构方案</a><a href="./schedule/">项目排期</a><a href="./site-scope/">全站范围</a><a href="#header">页眉菜单</a><a href="#homepage">首页结构</a><a href="#roadmap">实施验收</a>
     <div class="minor">范围：结构与执行方式，不是新版网页视觉预览。<br>基于现站审计、V6优化方案及既有B2B预览主页。</div>
   </nav>
   <main>
@@ -127,7 +127,7 @@
 </div>
 <button class="top" aria-label="返回顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>
-  const links=[...document.querySelectorAll('.side a')];
+  const links=[...document.querySelectorAll('.side a[href^="#"]')];
   const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-25% 0px -65%'});
   sections.forEach(s=>observer.observe(s));
